@@ -1,0 +1,99 @@
+:root {
+  --gc-button-color: #3a4b5d;
+  --gc-button-text-color: #fff;
+  --gc-button-hover-color: #2a3b4d;
+  --gc-button-hover-text-color: var(--gc-button-text-color);
+  --gc-button-disabled-color: #b8c1c9;
+  --gc-button-disabled-text-color: var(--gc-button-text-color);
+  --gc-border-color: #e0e5ea;
+  --gc-empty-cell-color: #eceff2;
+  --gc-head-color: #6b7e92;
+  --gc-head-text-color: #fff;
+  --gc-event-text-color: #fff;
+  --gc-today-highlight-color: #fffae3;
+  --gc-small-font-size: 12px;
+}
+
+.gc {
+  --fc-button-bg-color: var(--gc-button-color);
+  --fc-button-border-color: var(--gc-button-color);
+  --fc-button-text-color: var(--gc-button-text-color);
+  --fc-button-hover-bg-color: var(--gc-button-hover-color);
+  --fc-button-hover-border-color: var(--gc-button-hover-color);
+  --fc-border-color: var(--gc-border-color);
+  --fc-neutral-bg-color: var(--gc-empty-cell-color);
+  --fc-event-text-color: var(--gc-event-text-color);
+  --fc-today-bg-color: var(--gc-today-highlight-color);
+
+  container-type: inline-size;
+  font-size: 14px;
+
+  .fc {
+    @include sm {
+      font-size: var(--gc-small-font-size);
+    }
+  }
+
+  .fc-button:hover {
+    --fc-button-text-color: var(--gc-button-hover-text-color);
+  }
+
+  .fc-button:disabled {
+    opacity: 1;
+    border-color: var(--gc-button-disabled-color);
+    background-color: var(--gc-button-disabled-color);
+    color: var(--gc-button-disabled-text-color);
+  }
+
+  .fc-scrollgrid {
+    border-color: transparent;
+
+    table {
+      border-left: 1px solid var(--gc-border-color);
+    }
+  }
+
+  th {
+    border-color: var(--gc-head-color);
+    background-color: var(--gc-head-color);
+    color: var(--gc-head-text-color);
+    font-weight: normal;
+
+    &:not(:first-of-type) {
+      border-left: none;
+    }
+    &:not(:last-of-type) {
+      border-right: none;
+    }
+  }
+
+  .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 0.5em;
+  }
+
+  .fc-toolbar-title {
+    font-size: 1.4em;
+  }
+
+  .fc-daygrid-day-number {
+    padding: 0.15em;
+  }
+
+  .fc-daygrid-body-natural .fc-daygrid-day-events {
+    min-height: 3.5em;
+    margin-bottom: 0.25em;
+  }
+
+  .fc-view-harness {
+    background-color: #fff;
+    line-height: 1.3;
+  }
+
+  .fc-button {
+    outline: none;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
